@@ -1588,11 +1588,11 @@ bool ja4_matches_ua(char *client_browser, char *ja4) {
 
     if (strcmp(client_browser, "firefox") == 0) {
         if (strcmp(p1, "t13d1715h2") == 0 || strcmp(p1, "t13i1714h2") == 0 ||
-            strcmp(p1, "t13d1717h2") == 0) {
+            strcmp(p1, "t13d1717h2") == 0 || strcmp(p1, "t13d1615h2") == 0){
             return true;
         }
 
-        if (strcmp(p2, "5b57614c22b0") == 0) {
+        if (strcmp(p2, "5b57614c22b0") == 0 || strcmp(p2, "86a278354501") == 0) {
             return true;
         }
         return false;
