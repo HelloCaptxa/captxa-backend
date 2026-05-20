@@ -82,8 +82,8 @@ source ~/.bashrc
 # Issue certificate (use your DNS provider's API)
 ~/.acme.sh/acme.sh --issue -d yourdomain.com \
   --dns dns_your_provider \
-  --key-file       certs/privkey.pem \
-  --fullchain-file certs/fullchain.pem \
+  --key-file       /etc/letsencrypt/live/captxa.com/privkey.pem \
+  --fullchain-file /etc/letsencrypt/live/captxa.com/fullchain.pem \
   --reloadcmd      "pkill -HUP captcha_server"
 
 ~/.acme.sh/acme.sh --install-cronjob
@@ -200,14 +200,14 @@ MY_API_TOKEN   --> Must be len of API_TOKEN_LEN
 ### Server & Networking — `h2o_server.c`
 
 | Define                  | Default                        | Description                                   |
-|-------------------------|--------------------------------|-----------------------------------------------|
-| `SERVER_PORT`           | `443`                          | Listening port                                |
-| `WORKER_THREADS`        | `8`                            | Number of worker threads (0 = auto-detect)    | 
-| `WORKER_CORE_START`     | `0`                            | First CPU core to pin workers to              |
-| `TLS_CERT_FILE`         | `certs/fullchain.pem`          | TLS certificate chain path                    |
-| `TLS_KEY_FILE`          | `certs/privkey.pem`            | TLS private key path                          |
-| `LOGS_SERVER_IP`        | `"159.195.38.167"`             | UDP telemetry destination IP                  |
-| `LOGS_SERVER_PORT`      | `5000`                         | UDP telemetry destination port                |
+|-------------------------|--------------------------------------------------|-----------------------------------------------|
+| `SERVER_PORT`           | `443`                                            | Listening port                                |
+| `WORKER_THREADS`        | `8`                                              | Number of worker threads (0 = auto-detect)    | 
+| `WORKER_CORE_START`     | `0`                                              | First CPU core to pin workers to              |
+| `TLS_CERT_FILE`         | `/etc/letsencrypt/live/captxa.com/fullchain.pem` | TLS certificate chain path                    |
+| `TLS_KEY_FILE`          | `/etc/letsencrypt/live/captxa.com/privkey.pem`   | TLS private key path                          |
+| `LOGS_SERVER_IP`        | `"159.195.38.167"`                               | UDP telemetry destination IP                  |
+| `LOGS_SERVER_PORT`      | `5000`                                           | UDP telemetry destination port                |
 
 ### Proof-of-Work — `h2o_server.c`
 
