@@ -68,7 +68,7 @@ repositories. Build h2o from source:
 ### 1. Clone
 
 ```bash
-git clone https://github.com/HelloCaptxa/captxa-backend.git
+git clone https://github.com/captxa/captxa-backend.git
 cd captxa-backend
 ```
 
